@@ -1,4 +1,4 @@
-# Proyek Sains Data
+# Profil
 
 Halooo website ini akan mengenalkan anda terhadap Proyek Sains Data yang berdasarkan pada kelas Teknik Informatika Universitas Trunojoyo Madura. Author berharap website ini dapat bermanfaat bagi pembaca
 
