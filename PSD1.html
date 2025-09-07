@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Eksplorasi Data" href="PSD_S1.html" />
-    <link rel="prev" title="Profil" href="intro.html" />
+    <link rel="prev" title="Memahami Bisnis" href="Bussinnes_Understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,6 +180,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bussinnes_Understanding.html"><strong>Memahami Bisnis</strong></a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#"><strong>Data Understanding</strong></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="PSD_S1.html"><strong>Eksplorasi Data</strong></a></li>
 </ul>
@@ -380,7 +381,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-data-understanding"><strong>Manfaat Data Understanding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding-pemahaman-bisnis"><strong>Business Understanding (Pemahaman Bisnis)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-dalam-memahami-data"><strong>Proses dalam Memahami Data</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data"><strong>1. Pengumpulan Data</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mengambil-dan-menampilkan-data-serta-menghapus-file-yang-di-upload-sebelumnya"><strong>b. Mengambil dan menampilkan data serta menghapus file yang di upload sebelumnya</strong></a></li>
@@ -410,7 +410,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
 <h1><strong>Data Understanding</strong><a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
-<p><strong>Data Understanding</strong> atau yang biasa disebut dengan <strong>Memahami Data</strong> adalah salah satu tahap penting dalam proses <em>Knowledge Discovery in Databases</em> (KDD) atau Data Mining. Ini merupakan langkah awal yang bertujuan untuk memahami data secara mendalam sebelum melakukan analisis lebih lanjut. Pemahaman data yang baik sangat krusial karena akan memengaruhi keberhasilan seluruh proses data mining.</p>
+<p><strong>Data Understanding</strong> atau yang biasa disebut dengan <strong>Memahami Data</strong> adalah salah satu tahap penting dalam proses <em>Knowledge Discovery in Databases</em> (KDD) atau Data Sains. Ini merupakan langkah awal yang bertujuan untuk memahami data secara mendalam sebelum melakukan analisis lebih lanjut. Pemahaman data yang baik sangat krusial karena akan memengaruhi keberhasilan seluruh proses data mining.</p>
 <p>Beberapa kegiatan dalam memahami data diantaranya adalah:</p>
 <ul>
 <li><p>Pengumpulan Data</p>
@@ -459,30 +459,6 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="business-understanding-pemahaman-bisnis">
-<h2><strong>Business Understanding (Pemahaman Bisnis)</strong><a class="headerlink" href="#business-understanding-pemahaman-bisnis" title="Link to this heading">#</a></h2>
-<p>Walaupun dataset Iris sifatnya educational/toy dataset, tetap bisa diposisikan dalam konteks “bisnis”. Beberapa contoh:</p>
-<ol class="arabic simple">
-<li><p>Klasifikasi Produk Botani/Hortikultura</p>
-<ul class="simple">
-<li><p>Perusahaan bibit atau penelitian botani bisa mengklasifikasikan spesies bunga berdasarkan ukuran fisik (sepal &amp; petal).</p></li>
-<li><p>Tujuannya: menghindari kesalahan identifikasi spesies (misalnya setosa vs versicolor).</p></li>
-</ul>
-</li>
-<li><p>Otomatisasi Identifikasi Tanaman</p>
-<ul class="simple">
-<li><p>Aplikasi mobile atau sistem AI untuk petani/peneliti bisa mengenali spesies bunga hanya dengan input ukuran kelopak/daun.</p></li>
-<li><p>Ini membantu dalam riset atau pertanian skala besar.</p></li>
-</ul>
-</li>
-<li><p>Efisiensi dalam Penelitian Biologi</p>
-<ul class="simple">
-<li><p>Peneliti tidak perlu manual mengidentifikasi bunga satu per satu, tapi bisa menggunakan model klasifikasi otomatis.</p></li>
-<li><p>Tujuannya: mempercepat proses penelitian.</p></li>
-</ul>
-</li>
-</ol>
-</section>
 <section id="proses-dalam-memahami-data">
 <h2><strong>Proses dalam Memahami Data</strong><a class="headerlink" href="#proses-dalam-memahami-data" title="Link to this heading">#</a></h2>
 <section id="pengumpulan-data">
@@ -529,9 +505,7 @@ Requirement already satisfied: numpy&gt;=1.26.0 in /home/codespace/.local/lib/py
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
+Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
@@ -563,26 +537,6 @@ Requirement already satisfied: typing-extensions&gt;=4.6.0 in /home/codespace/.l
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Buat file dengan format (.env) untuk koneksi database dari <strong>aiven</strong>. Untuk isi dari file tersebut sebagai berikut:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MYSQL_HOST</span><span class="o">=</span><span class="n">mysql</span><span class="o">-</span><span class="mi">3634</span><span class="n">ef1a</span><span class="o">-</span><span class="n">tugas</span><span class="o">-</span><span class="n">pendata</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="n">aivencloud</span><span class="o">.</span><span class="n">com</span>
-<span class="n">MYSQL_PORT</span><span class="o">=</span><span class="mi">17416</span>
-<span class="n">MYSQL_USER</span><span class="o">=</span><span class="n">avnadmin</span>
-<span class="n">MYSQL_PASSWORD</span><span class="o">=</span><span class="n">AVNS_2NRSFWfr9pGMEI7BSpA</span>
-<span class="n">MYSQL_DATABASE</span><span class="o">=</span><span class="n">defaultdb</span>
-
-<span class="n">PG_HOST</span><span class="o">=</span><span class="n">pg</span><span class="o">-</span><span class="mi">359</span><span class="n">aec68</span><span class="o">-</span><span class="n">tugas</span><span class="o">-</span><span class="n">pendata</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="n">aivencloud</span><span class="o">.</span><span class="n">com</span>
-<span class="n">PG_PORT</span><span class="o">=</span><span class="mi">17416</span>
-<span class="n">PG_USER</span><span class="o">=</span><span class="n">avnadmin</span>
-<span class="n">PG_PASSWORD</span><span class="o">=</span><span class="n">AVNS_oal2yP3mG6JLIwX3BUK</span>
-<span class="n">PG_DATABASE</span><span class="o">=</span><span class="n">defaultdb</span>
-
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Lalu upload filenya ke colab.</p></li>
-</ul>
 <ul class="simple">
 <li><p>Koneksikan database dari aiven</p></li>
 </ul>
@@ -1197,12 +1151,12 @@ Iris-virginica          6.588        2.974         5.552        2.026
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="Bussinnes_Understanding.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Profil</p>
+        <p class="prev-next-title"><strong>Memahami Bisnis</strong></p>
       </div>
     </a>
     <a class="right-next"
@@ -1231,7 +1185,6 @@ Iris-virginica          6.588        2.974         5.552        2.026
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-data-understanding"><strong>Manfaat Data Understanding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding-pemahaman-bisnis"><strong>Business Understanding (Pemahaman Bisnis)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-dalam-memahami-data"><strong>Proses dalam Memahami Data</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data"><strong>1. Pengumpulan Data</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mengambil-dan-menampilkan-data-serta-menghapus-file-yang-di-upload-sebelumnya"><strong>b. Mengambil dan menampilkan data serta menghapus file yang di upload sebelumnya</strong></a></li>
