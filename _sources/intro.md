@@ -1,11 +1,15 @@
-# Welcome to your Jupyter Book
+# Profil
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Halooo, website ini akan mengenalkan anda terhadap Proyek Sains Data yang berdasarkan pada kelas Teknik Informatika Universitas Trunojoyo Madura. Penulis berharap website ini dapat bermanfaat bagi pembaca
 
-Check out the content pages bundled with this sample book to see more.
+Identitas Mahasiswa (Author):
+
+Nama: Yudha Caesar Maulana
+
+NIM: 230411100057
+
+Email: yareksesmemi@gmail.com
+
 
 ```{tableofcontents}
 ```
