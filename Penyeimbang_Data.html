@@ -1,0 +1,1587 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Penyeimbangan Data &#8212; My PSD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Penyeimbang_Data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Prepocessing" href="prepocessing_psd.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My PSD - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My PSD - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bussinnes_Understanding.html"><strong>Memahami Bisnis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="dueksplor.html"><strong>Data Understanding &amp; Eksplorasi Data (Power BI)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepocessing_psd.html"><strong>Prepocessing</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Penyeimbangan Data</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPenyeimbang_Data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Penyeimbang_Data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Penyeimbangan Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-dataset-ecoli"><strong>Tentang Dataset Ecoli</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masalah-ketidakseimbangan-data"><strong>Masalah Ketidakseimbangan Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">Instalasi Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-koneksi-mysql-dan-pengambilan-data-dengan-pandas">Penjelasan Koneksi MySQL dan Pengambilan Data dengan Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-koneksi-database">1. Konfigurasi Koneksi Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-engine-koneksi-dengan-sqlalchemy">2. Membuat Engine Koneksi dengan SQLAlchemy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-query-sql">3. Menjalankan Query SQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-data-ke-dataframe-pandas">4. Membaca Data ke DataFrame Pandas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-5-data-pertama">5. Melihat 5 Data Pertama</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tampilkan-data-scatter-plot-menggunakan-pca">Tampilkan data scatter plot menggunakan PCA.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adasyn">ADASYN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-setelah-oveersampling-adasyn">Distribusi Data Setelah Oveersampling (ADASYN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-oveersampling-adasyn">Visualisasi Data Setelah Oveersampling (ADASYN)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smote">SMOTE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-setelah-oveersampling-smote">Distribusi Data Setelah Oveersampling (SMOTE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-seteleah-oveersampling-adasyn">Visualisasi Data Seteleah Oveersampling (ADASYN)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="penyeimbangan-data">
+<h1><strong>Penyeimbangan Data</strong><a class="headerlink" href="#penyeimbangan-data" title="Link to this heading">#</a></h1>
+<p>Penyeimbangan data adalah proses mengatasi ketidakseimbangan (imbalance) pada distribusi kelas dalam dataset, khususnya pada masalah klasifikasi. Dalam dataset tidak seimbang (imbalanced dataset), jumlah sampel pada satu kelas (mayoritas) jauh lebih banyak dibanding kelas lain (minoritas). Hal ini bisa membuat model “berpihak” pada kelas mayoritas dan mengabaikan kelas minoritas.</p>
+<p><strong>Tujuan</strong></p>
+<ol class="arabic simple">
+<li><p>Membuat distribusi kelas lebih seimbang agar model bisa belajar mengenali pola dari semua kelas dengan baik.</p></li>
+<li><p>Mengurangi bias prediksi terhadap kelas mayoritas.</p></li>
+</ol>
+<p>Metode Penyeimbangan Data</p>
+<ul>
+<li><p>Oversampling</p>
+<ul class="simple">
+<li><p>Menambah jumlah data kelas minoritas.</p></li>
+</ul>
+<p>Contoh:</p>
+<ol class="arabic simple">
+<li><p>Random Oversampling: menduplikasi data minoritas.</p></li>
+<li><p>SMOTE (Synthetic Minority Oversampling Technique): membuat sampel sintetis baru.</p></li>
+<li><p>ADASYN (Adaptive Synthetic Sampling): mirip SMOTE tapi lebih adaptif, membuat data sintetis lebih banyak di daerah minoritas yang sulit dipelajari.</p></li>
+</ol>
+</li>
+</ul>
+<section id="tentang-dataset-ecoli">
+<h2><strong>Tentang Dataset Ecoli</strong><a class="headerlink" href="#tentang-dataset-ecoli" title="Link to this heading">#</a></h2>
+<p>Dataset <strong>Ecoli</strong> (dari UCI Machine Learning Repository) sering digunakan untuk penelitian <strong>klasifikasi multi-kelas</strong>.</p>
+<ul class="simple">
+<li><p><strong>Jumlah atribut</strong>: 7 fitur numerik (contoh: <code class="docutils literal notranslate"><span class="pre">mcg</span></code>, <code class="docutils literal notranslate"><span class="pre">gvh</span></code>, <code class="docutils literal notranslate"><span class="pre">lip</span></code>, <code class="docutils literal notranslate"><span class="pre">chg</span></code>, <code class="docutils literal notranslate"><span class="pre">aac</span></code>, <code class="docutils literal notranslate"><span class="pre">alm1</span></code>, <code class="docutils literal notranslate"><span class="pre">alm2</span></code>).</p></li>
+<li><p><strong>Target</strong>: lokasi subseluler protein (kelas) → terdiri dari <strong>8 kelas</strong>.</p></li>
+</ul>
+<p>Distribusi data tidak seimbang, misalnya:</p>
+<ul class="simple">
+<li><p>Kelas <strong><code class="docutils literal notranslate"><span class="pre">cp</span></code> (cytoplasm)</strong> → jumlah data <strong>paling banyak (mayoritas)</strong>.</p></li>
+<li><p>Kelas lain seperti <code class="docutils literal notranslate"><span class="pre">im</span></code>, <code class="docutils literal notranslate"><span class="pre">pp</span></code>, <code class="docutils literal notranslate"><span class="pre">omL</span></code>, dsb. → jumlah data <strong>sangat sedikit (minoritas)</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="masalah-ketidakseimbangan-data">
+<h2><strong>Masalah Ketidakseimbangan Data</strong><a class="headerlink" href="#masalah-ketidakseimbangan-data" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Model cenderung <strong>mengenali kelas mayoritas (<code class="docutils literal notranslate"><span class="pre">cp</span></code>) lebih baik</strong>, karena datanya banyak.</p></li>
+<li><p>Kelas minoritas seperti <code class="docutils literal notranslate"><span class="pre">pp</span></code> atau <code class="docutils literal notranslate"><span class="pre">omL</span></code> sering salah prediksi karena datanya sangat sedikit.</p></li>
+<li><p>Akibatnya, <strong>akurasi keseluruhan bisa terlihat tinggi</strong>, tapi model <strong>gagal mengenali kelas minoritas</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2><strong>Kesimpulan</strong><a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Pada dataset <strong>Ecoli</strong>, penyeimbangan data penting untuk:</p>
+<ol class="arabic simple">
+<li><p>Mengurangi bias model terhadap kelas mayoritas (<code class="docutils literal notranslate"><span class="pre">cp</span></code>).</p></li>
+<li><p>Meningkatkan performa model dalam mengenali kelas minoritas.</p></li>
+<li><p>Membuat evaluasi model (misalnya <strong>F1-score per kelas</strong>) lebih representatif dibanding hanya melihat <strong>akurasi global</strong>.</p></li>
+</ol>
+</section>
+<section id="instalasi-library">
+<h2>Instalasi Library<a class="headerlink" href="#instalasi-library" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">ADASYN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">ADASYN</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imblearn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p></li>
+</ol>
+<p>Digunakan untuk:</p>
+<ul class="simple">
+<li><p>Membaca data dari berbagai sumber (CSV, SQL, Excel, dsb).</p></li>
+<li><p>Mengelola data dalam bentuk <strong>DataFrame</strong>.</p></li>
+<li><p>Melakukan operasi seperti filter, group, agregasi, dan transformasi data.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code></p></li>
+</ol>
+<p>Digunakan untuk membuat visualisasi data dasar, seperti:</p>
+<ul class="simple">
+<li><p>Scatter plot</p></li>
+<li><p>Bar chart</p></li>
+<li><p>Histogram</p></li>
+<li><p>Line plot</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="3">
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code></p></li>
+</ol>
+<p>Digunakan untuk membuat visualisasi data yang lebih <strong>informatif dan estetik</strong> dibanding <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, misalnya:</p>
+<ul class="simple">
+<li><p>Heatmap</p></li>
+<li><p>Pairplot</p></li>
+<li><p>Boxplot</p></li>
+<li><p>Distribution plot</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="4">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></p></li>
+</ol>
+<p>Digunakan untuk operasi <strong>numerik dan array</strong>:</p>
+<ul class="simple">
+<li><p>Mengelola data dalam bentuk array/matriks.</p></li>
+<li><p>Fungsi matematika (linear algebra, statistik, random number).</p></li>
+<li><p>Optimasi perhitungan numerik agar lebih cepat.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="5">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sqlalchemy</span> <span class="pre">import</span> <span class="pre">create_engine</span></code></p></li>
+</ol>
+<p>Digunakan untuk:</p>
+<ul class="simple">
+<li><p>Membuat koneksi ke <strong>database SQL</strong> (misalnya MySQL, PostgreSQL).</p></li>
+<li><p>Mengambil data langsung dari database ke dalam pandas DataFrame.</p></li>
+<li><p>Menjalankan query SQL dari Python.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="6">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.decomposition</span> <span class="pre">import</span> <span class="pre">PCA</span></code></p></li>
+</ol>
+<p>Digunakan untuk:</p>
+<ul class="simple">
+<li><p><strong>Principal Component Analysis (PCA)</strong> → teknik reduksi dimensi.</p></li>
+<li><p>Mengubah data berdimensi tinggi menjadi dimensi lebih rendah (biasanya 2 atau 3) untuk visualisasi.</p></li>
+<li><p>Menangkap variansi utama data sehingga tetap representatif meskipun dimensinya berkurang.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="7">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">imblearn.over_sampling</span> <span class="pre">import</span> <span class="pre">ADASYN</span></code></p></li>
+</ol>
+<p>Digunakan untuk:</p>
+<ul class="simple">
+<li><p><strong>Adaptive Synthetic Sampling (ADASYN)</strong> → teknik <strong>oversampling</strong> untuk data tidak seimbang.</p></li>
+<li><p>Membuat data sintetis untuk kelas minoritas berdasarkan distribusi data yang ada.</p></li>
+<li><p>Membantu model agar tidak bias terhadap kelas mayoritas.</p></li>
+</ul>
+</section>
+<section id="pengumpulan-data">
+<h2>Pengumpulan Data<a class="headerlink" href="#pengumpulan-data" title="Link to this heading">#</a></h2>
+<p>Data diambil dari dataset ecoli dari UCI <a class="reference external" href="https://archive.ics.uci.edu/dataset/39/ecoli">https://archive.ics.uci.edu/dataset/39/ecoli</a></p>
+<p>Data akan diletakkan di Database MySQL lokal dengan kode berikut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MYSQL_HOST</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="n">MYSQL_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">MYSQL_USER</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span>
+<span class="n">MYSQL_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">MYSQL_DATABASE</span> <span class="o">=</span> <span class="s2">&quot;ecoli&quot;</span>
+
+<span class="n">mysql_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{</span><span class="n">MYSQL_USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">MYSQL_HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">MYSQL_DATABASE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="n">mysql_query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM ecoli;&quot;</span>
+<span class="n">df_mysql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">,</span> <span class="n">mysql_engine</span><span class="p">)</span>
+
+<span class="n">df_mysql</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>mcg</th>
+      <th>gvh</th>
+      <th>lip</th>
+      <th>chg</th>
+      <th>aac</th>
+      <th>alm1</th>
+      <th>alm2</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.49</td>
+      <td>0.29</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.56</td>
+      <td>0.24</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0.07</td>
+      <td>0.40</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.54</td>
+      <td>0.35</td>
+      <td>0.44</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.56</td>
+      <td>0.40</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.49</td>
+      <td>0.37</td>
+      <td>0.46</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0.59</td>
+      <td>0.49</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.52</td>
+      <td>0.45</td>
+      <td>0.36</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.55</td>
+      <td>0.25</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="penjelasan-koneksi-mysql-dan-pengambilan-data-dengan-pandas">
+<h3>Penjelasan Koneksi MySQL dan Pengambilan Data dengan Pandas<a class="headerlink" href="#penjelasan-koneksi-mysql-dan-pengambilan-data-dengan-pandas" title="Link to this heading">#</a></h3>
+<p>Potongan kode berikut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MYSQL_HOST</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="n">MYSQL_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">MYSQL_USER</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span>
+<span class="n">MYSQL_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">MYSQL_DATABASE</span> <span class="o">=</span> <span class="s2">&quot;ecoli&quot;</span>
+
+<span class="n">mysql_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{</span><span class="n">MYSQL_USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">MYSQL_HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">MYSQL_DATABASE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="n">mysql_query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM ecoli;&quot;</span>
+<span class="n">df_mysql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">,</span> <span class="n">mysql_engine</span><span class="p">)</span>
+
+<span class="n">df_mysql</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="konfigurasi-koneksi-database">
+<h4>1. Konfigurasi Koneksi Database<a class="headerlink" href="#konfigurasi-koneksi-database" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MYSQL_HOST</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="n">MYSQL_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">MYSQL_USER</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span>
+<span class="n">MYSQL_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">MYSQL_DATABASE</span> <span class="o">=</span> <span class="s2">&quot;ecoli&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_HOST</span></code>: alamat server database, di sini <code class="docutils literal notranslate"><span class="pre">localhost</span></code> artinya database ada di komputer sendiri.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_PORT</span></code>: port default MySQL adalah <code class="docutils literal notranslate"><span class="pre">3306</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_USER</span></code>: username untuk login database (<code class="docutils literal notranslate"><span class="pre">root</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_PASSWORD</span></code>: password login database (kosong di sini).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MYSQL_DATABASE</span></code>: nama database yang digunakan (<code class="docutils literal notranslate"><span class="pre">ecoli</span></code>).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="membuat-engine-koneksi-dengan-sqlalchemy">
+<h4>2. Membuat Engine Koneksi dengan SQLAlchemy<a class="headerlink" href="#membuat-engine-koneksi-dengan-sqlalchemy" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mysql_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{</span><span class="n">MYSQL_USER</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">MYSQL_HOST</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MYSQL_PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">MYSQL_DATABASE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">create_engine</span></code>: membuat <strong>engine</strong> untuk koneksi ke MySQL.</p></li>
+<li><p>Menggunakan <strong>driver <code class="docutils literal notranslate"><span class="pre">pymysql</span></code></strong> sebagai penghubung antara Python dan MySQL.</p></li>
+<li><p>Engine ini nantinya dipakai oleh <code class="docutils literal notranslate"><span class="pre">pandas</span></code> untuk membaca data langsung dari database.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="menjalankan-query-sql">
+<h4>3. Menjalankan Query SQL<a class="headerlink" href="#menjalankan-query-sql" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mysql_query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM ecoli;&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Membuat query SQL untuk mengambil <strong>semua data</strong> dari tabel <code class="docutils literal notranslate"><span class="pre">ecoli</span></code>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="membaca-data-ke-dataframe-pandas">
+<h4>4. Membaca Data ke DataFrame Pandas<a class="headerlink" href="#membaca-data-ke-dataframe-pandas" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_mysql</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">,</span> <span class="n">mysql_engine</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.read_sql</span></code>: menjalankan query SQL dan menyimpannya ke dalam <strong>DataFrame pandas</strong>.</p></li>
+<li><p>Hasilnya adalah tabel yang bisa diproses seperti data CSV/Excel, tapi sumbernya dari MySQL.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="melihat-5-data-pertama">
+<h4>5. Melihat 5 Data Pertama<a class="headerlink" href="#melihat-5-data-pertama" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_mysql</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Menampilkan 5 baris pertama dari DataFrame untuk memastikan data berhasil diambil.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_empty</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">kal</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">kal</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+        <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hasil</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">])</span>
+
+<span class="n">ecoli_df</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ecoli.data&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+    <span class="n">ecoli_df</span> <span class="o">=</span> <span class="n">remove_empty</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">ecoli_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mcg</th>
+      <th>gvh</th>
+      <th>lip</th>
+      <th>chg</th>
+      <th>aac</th>
+      <th>alm1</th>
+      <th>alm2</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAT_ECOLI</td>
+      <td>0.49</td>
+      <td>0.29</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.56</td>
+      <td>0.24</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ACEA_ECOLI</td>
+      <td>0.07</td>
+      <td>0.40</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.54</td>
+      <td>0.35</td>
+      <td>0.44</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ACEK_ECOLI</td>
+      <td>0.56</td>
+      <td>0.40</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.49</td>
+      <td>0.37</td>
+      <td>0.46</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ACKA_ECOLI</td>
+      <td>0.59</td>
+      <td>0.49</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.52</td>
+      <td>0.45</td>
+      <td>0.36</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ADI_ECOLI</td>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.55</td>
+      <td>0.25</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>331</th>
+      <td>TREA_ECOLI</td>
+      <td>0.74</td>
+      <td>0.56</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.47</td>
+      <td>0.68</td>
+      <td>0.30</td>
+      <td>pp</td>
+    </tr>
+    <tr>
+      <th>332</th>
+      <td>UGPB_ECOLI</td>
+      <td>0.71</td>
+      <td>0.57</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.48</td>
+      <td>0.35</td>
+      <td>0.32</td>
+      <td>pp</td>
+    </tr>
+    <tr>
+      <th>333</th>
+      <td>USHA_ECOLI</td>
+      <td>0.61</td>
+      <td>0.60</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.44</td>
+      <td>0.39</td>
+      <td>0.38</td>
+      <td>pp</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>XYLF_ECOLI</td>
+      <td>0.59</td>
+      <td>0.61</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.42</td>
+      <td>0.42</td>
+      <td>0.37</td>
+      <td>pp</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>YTFQ_ECOLI</td>
+      <td>0.74</td>
+      <td>0.74</td>
+      <td>0.48</td>
+      <td>0.50</td>
+      <td>0.31</td>
+      <td>0.53</td>
+      <td>0.52</td>
+      <td>pp</td>
+    </tr>
+  </tbody>
+</table>
+<p>336 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Potongan kode berikut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_empty</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">kal</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">kal</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+        <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hasil</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">])</span>
+
+<span class="n">ecoli_df</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ecoli.data&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+    <span class="n">ecoli_df</span> <span class="o">=</span> <span class="n">remove_empty</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">ecoli_df</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li><p>Mendefinisikan Daftar Fitur</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Variabel <code class="docutils literal notranslate"><span class="pre">fitur</span></code> menyimpan nama <strong>atribut numerik</strong> pada dataset Ecoli.</p></li>
+<li><p>Ini digunakan sebagai referensi saat membentuk DataFrame nantinya.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="2">
+<li><p>Fungsi <code class="docutils literal notranslate"><span class="pre">remove_empty(data)</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_empty</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">kal</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">kal</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+        <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hasil</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mcg&quot;</span><span class="p">,</span> <span class="s2">&quot;gvh&quot;</span><span class="p">,</span> <span class="s2">&quot;lip&quot;</span><span class="p">,</span> <span class="s2">&quot;chg&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">,</span> <span class="s2">&quot;alm1&quot;</span><span class="p">,</span> <span class="s2">&quot;alm2&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Proses dalam fungsi:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Inisialisasi list kosong</strong>: <code class="docutils literal notranslate"><span class="pre">hasil</span> <span class="pre">=</span> <span class="pre">[]</span></code>.</p></li>
+<li><p><strong>Loop setiap baris data</strong> (<code class="docutils literal notranslate"><span class="pre">kal</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data[kal].split(&quot;</span> <span class="pre">&quot;)</span></code> → memisahkan baris berdasarkan spasi.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[a</span> <span class="pre">!=</span> <span class="pre">'']</span></code> → menghapus string kosong akibat spasi berlebih.</p></li>
+</ul>
+</li>
+<li><p><strong>Menyimpan hasil</strong> ke dalam list <code class="docutils literal notranslate"><span class="pre">hasil</span></code>.</p></li>
+<li><p><strong>Membuat DataFrame</strong> dengan kolom:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> → nama/ID sequence.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mcg,</span> <span class="pre">gvh,</span> <span class="pre">lip,</span> <span class="pre">chg,</span> <span class="pre">aac,</span> <span class="pre">alm1,</span> <span class="pre">alm2</span></code> → fitur numerik.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> → kelas target (lokasi subseluler).</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic simple" start="3">
+<li><p>Membaca File <code class="docutils literal notranslate"><span class="pre">ecoli.data</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ecoli.data&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+    <span class="n">ecoli_df</span> <span class="o">=</span> <span class="n">remove_empty</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Membuka file <code class="docutils literal notranslate"><span class="pre">ecoli.data</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file.read().splitlines()</span></code> → membaca semua baris dan menyimpannya ke array.</p></li>
+<li><p>Mengirim data ke fungsi <code class="docutils literal notranslate"><span class="pre">remove_empty()</span></code> untuk diproses menjadi DataFrame.</p></li>
+</ul>
+<hr class="docutils" />
+<ol class="arabic simple" start="4">
+<li><p>Hasil Akhir</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ecoli_df</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Berisi dataset Ecoli dalam format <strong>pandas DataFrame</strong>.</p></li>
+<li><p>Kolom yang tersedia:
+<code class="docutils literal notranslate"><span class="pre">[&quot;name&quot;,</span> <span class="pre">&quot;mcg&quot;,</span> <span class="pre">&quot;gvh&quot;,</span> <span class="pre">&quot;lip&quot;,</span> <span class="pre">&quot;chg&quot;,</span> <span class="pre">&quot;aac&quot;,</span> <span class="pre">&quot;alm1&quot;,</span> <span class="pre">&quot;alm2&quot;,</span> <span class="pre">&quot;class&quot;]</span></code>.</p></li>
+<li><p>Data siap digunakan untuk analisis lebih lanjut (misalnya PCA, SMOTE/ADASYN, visualisasi).</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="tampilkan-data-scatter-plot-menggunakan-pca">
+<h2>Tampilkan data scatter plot menggunakan PCA.<a class="headerlink" href="#tampilkan-data-scatter-plot-menggunakan-pca" title="Link to this heading">#</a></h2>
+<p>Berikut adalah tampilan scatter plot data ecoli sebelum terkena balancing data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">ecoli_df</span><span class="p">[</span><span class="n">fitur</span><span class="p">]))</span>
+
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">reduced</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ecoli_df</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">reduced</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">reduced</span><span class="p">[</span><span class="n">reduced</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">reduced</span><span class="p">[</span><span class="n">reduced</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Class&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.12</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5024774b063fbdf29e2ce299961ef562ff66128d8cc5dba1b9fd66127f6b5b66.png" src="_images/5024774b063fbdf29e2ce299961ef562ff66128d8cc5dba1b9fd66127f6b5b66.png" />
+</div>
+</div>
+<p>Kode tersebut melakukan reduksi dimensi dengan PCA dari 7 fitur menjadi 2 dimensi, lalu hasilnya digabung dengan label kelas. Setelah itu, dibuat scatter plot 2D untuk menampilkan distribusi data, di mana setiap kelas ditandai dengan warna berbeda. Dengan cara ini, pola pemisahan antar kelas pada dataset Ecoli dapat dilihat lebih jelas dalam dua dimensi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">ADASYN</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">ecoli_df</span><span class="p">[</span><span class="n">fitur</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">ecoli_df</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>
+
+<span class="n">n_neigbors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">76</span><span class="p">]</span>
+
+<span class="n">adasyn</span> <span class="o">=</span> <span class="n">ADASYN</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sampling_strategy</span><span class="o">=</span><span class="s2">&quot;minority&quot;</span><span class="p">)</span>
+<span class="n">x_resampled</span><span class="p">,</span> <span class="n">y_resampled</span> <span class="o">=</span> <span class="n">adasyn</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_neigbors</span><span class="p">:</span>
+    <span class="n">x_resampled</span><span class="p">,</span> <span class="n">y_resampled</span> <span class="o">=</span> <span class="n">ADASYN</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">sampling_strategy</span><span class="o">=</span><span class="s2">&quot;minority&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">x_resampled</span><span class="p">,</span> <span class="n">y_resampled</span><span class="p">)</span>
+
+<span class="n">merge</span> <span class="o">=</span> <span class="n">x_resampled</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">y_resampled</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">n_original</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">n_total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_resampled</span><span class="p">)</span>
+
+<span class="n">idx_original</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_original</span><span class="p">)</span>
+<span class="n">idx_sintetis</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_original</span><span class="p">,</span> <span class="n">n_total</span><span class="p">)</span>
+
+<span class="n">merge</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mcg</th>
+      <th>gvh</th>
+      <th>lip</th>
+      <th>chg</th>
+      <th>aac</th>
+      <th>alm1</th>
+      <th>alm2</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.49</td>
+      <td>0.29</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.56</td>
+      <td>0.24</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.07</td>
+      <td>0.4</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.54</td>
+      <td>0.35</td>
+      <td>0.44</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.56</td>
+      <td>0.4</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.49</td>
+      <td>0.37</td>
+      <td>0.46</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.59</td>
+      <td>0.49</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.52</td>
+      <td>0.45</td>
+      <td>0.36</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.23</td>
+      <td>0.32</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.55</td>
+      <td>0.25</td>
+      <td>0.35</td>
+      <td>cp</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1146</th>
+      <td>0.253259</td>
+      <td>0.49</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.406517</td>
+      <td>0.739663</td>
+      <td>0.443372</td>
+      <td>im</td>
+    </tr>
+    <tr>
+      <th>1147</th>
+      <td>0.511929</td>
+      <td>0.453141</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.569901</td>
+      <td>0.656521</td>
+      <td>0.54676</td>
+      <td>im</td>
+    </tr>
+    <tr>
+      <th>1148</th>
+      <td>0.629907</td>
+      <td>0.539674</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.646974</td>
+      <td>0.790047</td>
+      <td>0.807719</td>
+      <td>im</td>
+    </tr>
+    <tr>
+      <th>1149</th>
+      <td>0.60027</td>
+      <td>0.502247</td>
+      <td>0.995326</td>
+      <td>0.5</td>
+      <td>0.540899</td>
+      <td>0.76964</td>
+      <td>0.798742</td>
+      <td>im</td>
+    </tr>
+    <tr>
+      <th>1150</th>
+      <td>0.715792</td>
+      <td>0.504555</td>
+      <td>0.48</td>
+      <td>0.5</td>
+      <td>0.622624</td>
+      <td>0.976832</td>
+      <td>0.970693</td>
+      <td>im</td>
+    </tr>
+  </tbody>
+</table>
+<p>1151 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Kode tersebut melakukan proses penyeimbangan data pada dataset Ecoli menggunakan ADASYN. Pertama, fitur dan label dipisahkan, kemudian dilakukan oversampling pada kelas minoritas dengan parameter jumlah tetangga (n_neighbors) yang bervariasi. Setiap iterasi menghasilkan data sintetis baru agar distribusi kelas lebih seimbang. Hasil akhirnya digabungkan kembali antara fitur dan label, dengan membedakan data asli dan data sintetis berdasarkan indeks.</p>
+</section>
+<section id="adasyn">
+<h2>ADASYN<a class="headerlink" href="#adasyn" title="Link to this heading">#</a></h2>
+<section id="distribusi-data-setelah-oveersampling-adasyn">
+<h3>Distribusi Data Setelah Oveersampling (ADASYN)<a class="headerlink" href="#distribusi-data-setelah-oveersampling-adasyn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">bar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">y_resampled</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="n">kelas</span><span class="p">,</span> <span class="n">dist_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">kelas</span> <span class="o">=</span> <span class="n">kelas</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">dist_data</span> <span class="o">=</span> <span class="n">dist_data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">kelas</span><span class="p">,</span> <span class="n">dist_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="o">.</span><span class="n">colors</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">kelas</span><span class="p">)],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kelas&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Jumlah Data&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribusi Data Setelah Oversampling (ADASYN)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">bar</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">dist_data</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+             <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span>
+             <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aa2527d377cba66fbcb54c16b37f5f828e0ec76bf14ae757c3e75141ce4ae89c.png" src="_images/aa2527d377cba66fbcb54c16b37f5f828e0ec76bf14ae757c3e75141ce4ae89c.png" />
+</div>
+</div>
+<p>Data hasil oversampling dihitung jumlahnya per kelas, lalu divisualisasikan menggunakan diagram batang berwarna berbeda untuk tiap kelas. Label jumlah data ditampilkan di atas setiap batang agar lebih informatif. Selain itu, ditambahkan grid horizontal dan tampilan diperhalus dengan pengaturan ukuran font, warna, dan layout. Dengan grafik ini, kita dapat melihat apakah distribusi data antar kelas sudah lebih seimbang setelah penerapan ADASYN.</p>
+</section>
+<section id="visualisasi-data-setelah-oveersampling-adasyn">
+<h3>Visualisasi Data Setelah Oveersampling (ADASYN)<a class="headerlink" href="#visualisasi-data-setelah-oveersampling-adasyn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_asli</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pca_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_resampled</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span><span class="s1">&#39;PC2&#39;</span><span class="p">])</span>
+<span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_resampled</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Asli&#39;</span>
+<span class="n">pca_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n_asli</span><span class="p">:,</span> <span class="s1">&#39;tipe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sintetis&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kelas</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())):</span>
+    <span class="n">asli</span> <span class="o">=</span> <span class="n">pca_data</span><span class="p">[(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">kelas</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Asli&#39;</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">asli</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">],</span> <span class="n">asli</span><span class="p">[</span><span class="s1">&#39;PC2&#39;</span><span class="p">],</span>
+                <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2"> (Asli)&quot;</span><span class="p">)</span>
+    <span class="n">sintetis</span> <span class="o">=</span> <span class="n">pca_data</span><span class="p">[(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">kelas</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Sintetis&#39;</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sintetis</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">],</span> <span class="n">sintetis</span><span class="p">[</span><span class="s1">&#39;PC2&#39;</span><span class="p">],</span>
+                <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2"> (Sintetis)&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisasi Data setelah Oversampling (ADASYN)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;PC1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PC2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Kelas + Tipe&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/84a978a0847d466062163b8d5e20f373c53f2999a15acd8d55c267bb0d82fda2.png" src="_images/84a978a0847d466062163b8d5e20f373c53f2999a15acd8d55c267bb0d82fda2.png" />
+</div>
+</div>
+<p>Data asli dan data hasil sintesis dari ADASYN direduksi dimensinya menjadi dua komponen utama dengan PCA, lalu diplot dalam bentuk scatter plot. Setiap kelas digambarkan dengan warna berbeda, di mana titik lingkaran mewakili data asli dan tanda silang mewakili data sintetis. Visualisasi ini memudahkan untuk melihat bagaimana ADASYN menambahkan data baru agar distribusi antar kelas lebih seimbang.</p>
+</section>
+</section>
+<section id="smote">
+<h2>SMOTE<a class="headerlink" href="#smote" title="Link to this heading">#</a></h2>
+<section id="distribusi-data-setelah-oveersampling-smote">
+<h3>Distribusi Data Setelah Oveersampling (SMOTE)<a class="headerlink" href="#distribusi-data-setelah-oveersampling-smote" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMOTE</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">ecoli_df</span><span class="p">[</span><span class="n">fitur</span><span class="p">]</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">ecoli_df</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>
+
+<span class="n">p_resampled</span><span class="p">,</span> <span class="n">q_resampled</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">k_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitur (p) dan label kelas (q) dari dataset Ecoli diambil, lalu SMOTE diterapkan untuk membuat data sintetis pada kelas minoritas. Dengan parameter k_neighbors=1, SMOTE membangkitkan data baru berdasarkan 1 tetangga terdekat. Hasilnya adalah dataset baru (p_resampled, q_resampled) dengan distribusi kelas yang lebih seimbang, sehingga lebih sesuai digunakan untuk pelatihan model klasifikasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_smote</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="n">q_resampled</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="n">kelas_smote</span><span class="p">,</span> <span class="n">dist_smote</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">bar_smote</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">kelas_smote</span> <span class="o">=</span> <span class="n">kelas_smote</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">dist_smote</span> <span class="o">=</span> <span class="n">dist_smote</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">kelas_smote</span><span class="p">,</span> <span class="n">dist_smote</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;skyblue&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">bars</span><span class="p">:</span>
+    <span class="n">yval</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">yval</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">yval</span><span class="p">),</span>
+             <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribusi Kelas Setelah SMOTE&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kelas&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Jumlah Sampel&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/da2a05ffd4dc776852bac08b98ba3ed86ea6cb996c96d0980f157cd0a104d9e0.png" src="_images/da2a05ffd4dc776852bac08b98ba3ed86ea6cb996c96d0980f157cd0a104d9e0.png" />
+</div>
+</div>
+<p>Setelah dataset diseimbangkan menggunakan SMOTE, jumlah sampel di tiap kelas dihitung menggunakan Counter. Data hasil hitungan tersebut kemudian diplot dalam bentuk bar chart dengan warna biru muda. Setiap batang diberikan label angka di atasnya untuk menunjukkan jumlah sampel per kelas. Grafik ini membantu memvisualisasikan hasil oversampling dan memastikan bahwa distribusi kelas sudah lebih seimbang.</p>
+</section>
+<section id="visualisasi-data-seteleah-oveersampling-adasyn">
+<h3>Visualisasi Data Seteleah Oveersampling (ADASYN)<a class="headerlink" href="#visualisasi-data-seteleah-oveersampling-adasyn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_asli</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">pca_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">p_resampled</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span><span class="s1">&#39;PC2&#39;</span><span class="p">])</span>
+<span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">q_resampled</span><span class="o">.</span><span class="n">values</span>
+<span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Asli&#39;</span>
+<span class="n">pca_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n_asli</span><span class="p">:,</span> <span class="s1">&#39;tipe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sintetis&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;Set2&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kelas</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+    <span class="n">asli</span> <span class="o">=</span> <span class="n">pca_data</span><span class="p">[(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">kelas</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Asli&#39;</span><span class="p">)]</span>
+    <span class="n">sintetis</span> <span class="o">=</span> <span class="n">pca_data</span><span class="p">[(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">kelas</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pca_data</span><span class="p">[</span><span class="s1">&#39;tipe&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Sintetis&#39;</span><span class="p">)]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">asli</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">],</span> <span class="n">asli</span><span class="p">[</span><span class="s1">&#39;PC2&#39;</span><span class="p">],</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2"> (Asli)&quot;</span><span class="p">,</span>
+                <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span>
+                <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sintetis</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">],</span> <span class="n">sintetis</span><span class="p">[</span><span class="s1">&#39;PC2&#39;</span><span class="p">],</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kelas</span><span class="si">}</span><span class="s2"> (Sintetis)&quot;</span><span class="p">,</span>
+                <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">palette</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span>
+                <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisasi Data setelah Oversampling (ADASYN)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;PC1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;PC2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Kelas + Tipe&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3230790d69626bf81438afd69f2ed6e12304786ce20abecde109dbd757100204.png" src="_images/3230790d69626bf81438afd69f2ed6e12304786ce20abecde109dbd757100204.png" />
+</div>
+</div>
+<p>Pertama, data hasil oversampling ditransformasi menjadi 2 dimensi menggunakan PCA (PC1 dan PC2). Data asli dan data sintetis diberi label berbeda. Selanjutnya, data diplot dalam scatter plot:</p>
+<ul class="simple">
+<li><p>Data asli ditampilkan dengan marker lingkaran (o) berwarna solid.</p></li>
+<li><p>Data sintetis (hasil ADASYN) ditampilkan dengan marker silang (x) berwarna sama, namun lebih transparan.</p></li>
+</ul>
+<p>Warna tiap kelas diatur dengan palet Set2 agar berbeda jelas, dan ditambahkan grid, judul, serta legenda untuk membedakan kelas beserta jenis datanya (asli/sintetis).</p>
+<p>Hasilnya, grafik memperlihatkan bagaimana ADASYN menambahkan sampel baru untuk menyeimbangkan distribusi kelas di ruang fitur.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="prepocessing_psd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Prepocessing</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-dataset-ecoli"><strong>Tentang Dataset Ecoli</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masalah-ketidakseimbangan-data"><strong>Masalah Ketidakseimbangan Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">Instalasi Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-koneksi-mysql-dan-pengambilan-data-dengan-pandas">Penjelasan Koneksi MySQL dan Pengambilan Data dengan Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurasi-koneksi-database">1. Konfigurasi Koneksi Database</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-engine-koneksi-dengan-sqlalchemy">2. Membuat Engine Koneksi dengan SQLAlchemy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-query-sql">3. Menjalankan Query SQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-data-ke-dataframe-pandas">4. Membaca Data ke DataFrame Pandas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-5-data-pertama">5. Melihat 5 Data Pertama</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tampilkan-data-scatter-plot-menggunakan-pca">Tampilkan data scatter plot menggunakan PCA.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adasyn">ADASYN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-setelah-oveersampling-adasyn">Distribusi Data Setelah Oveersampling (ADASYN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-oveersampling-adasyn">Visualisasi Data Setelah Oveersampling (ADASYN)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smote">SMOTE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-setelah-oveersampling-smote">Distribusi Data Setelah Oveersampling (SMOTE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-seteleah-oveersampling-adasyn">Visualisasi Data Seteleah Oveersampling (ADASYN)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yudha Caesar Maulana
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
